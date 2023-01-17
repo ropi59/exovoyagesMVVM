@@ -1,0 +1,25 @@
+<h3>Création des voyages</h3>
+
+<form [formGroup]="planner" (ngSubmit)="valider()">
+    <div>
+        <label for="city">Destination :</label>
+        <input type="text" id="city" name="city" formControlName="city">
+        <label for="date">Date :</label>
+        <input type="Date" id="date" name="date" formControlName="date">
+        <label for="passengers">Nombre de passagers :</label>
+        <input type="number" id="passengers" name="passengers" formControlName="passengers">
+        <button type="submit">Valider</button>
+    </div>
+</form>
+
+<h3>Mes voyages</h3>
+<div *ngFor="let onetrip of triplist">
+    <div>
+        <label>Destination :</label>
+        {{onetrip.destination}}
+        <label>Date du voyage :</label>
+        {{onetrip.date}}
+        <label>Nombre de passagers :</label>
+        {{onetrip.passengers}}
+    </div>
+</div>
